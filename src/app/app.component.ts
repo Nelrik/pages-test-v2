@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-app';
+  title = 'Alan Diaz';
+
+  ngOnInit(): void {
+    $("header").append("<div class='glitch-window'></div>");
+    //fill div with clone of real header
+    $( "h1.glitched" ).clone().appendTo( ".glitch-window" );
+  }
 }
